@@ -25,9 +25,6 @@ namespace Oval
         /// Returns a collection of <see cref="Requirement"/>s that must be
         /// satisfied by the object in order for the constraint to be satisfied.
         /// </returns>
-        /// <exception cref="System.ArgumentNullException">
-        /// Thrown when value is null.
-        /// </exception>
         [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")]
         Task<IEnumerable<Requirement>> CheckAsync(TValue value);
 
@@ -46,9 +43,6 @@ namespace Oval
         /// Returns a collection of <see cref="Requirement"/>s that must be
         /// satisfied by the object in order for the constraint to be satisfied.
         /// </returns>
-        /// <exception cref="System.ArgumentNullException">
-        /// Thrown when value is null.
-        /// </exception>
         [SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")]
         Task<IEnumerable<Requirement>> CheckAsync(TValue value, CancellationToken cancellationToken);
     }

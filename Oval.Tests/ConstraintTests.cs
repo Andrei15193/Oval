@@ -26,16 +26,6 @@ namespace Oval.Tests
 
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
-        public async Task TestInlineConstraintToCheckNullObject()
-        {
-            var constraint = Constraint.From<object>(
-                value => Enumerable.Empty<Requirement>());
-
-            await constraint.CheckAsync(null);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
         public void TestCreateInlineConstraintWithNull()
         {
             Constraint.From((Constraint.Callback<object>)null);
@@ -55,17 +45,6 @@ namespace Oval.Tests
             await constraint.CheckAsync(new object());
 
             Assert.AreEqual(1, callCount);
-        }
-
-        [TestMethod]
-        [ExpectedException(typeof(ArgumentNullException))]
-        public async Task TestAsyncConstraintToCheckNullObject()
-        {
-            var constraint = Constraint.From<object>(
-                (value, cancellationToken) =>
-                    Task.FromResult(Enumerable.Empty<Requirement>()));
-
-            await constraint.CheckAsync(null);
         }
 
         [TestMethod]

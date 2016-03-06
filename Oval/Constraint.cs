@@ -54,9 +54,6 @@ namespace Oval
         /// </exception>
         public async Task<IEnumerable<Requirement>> CheckAsync(TValue value, CancellationToken cancellationToken)
         {
-            if (value == null)
-                throw new ArgumentNullException(nameof(value));
-
             var task = OnCheckAsync(value, cancellationToken);
             if (task == null)
                 return Enumerable.Empty<Requirement>();
