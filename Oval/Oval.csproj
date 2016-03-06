@@ -53,7 +53,6 @@
     <Compile Include="Requirement.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ReadMe.md" />
     <None Include="Oval.pfx" />
     <None Include="project.json" />
   </ItemGroup>
