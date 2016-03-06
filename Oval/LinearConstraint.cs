@@ -45,7 +45,7 @@ namespace Oval
     /// <code>
     /// var constraint = LinearConstraint
     ///     .StartingWith&lt;string&gt;(
-    ///         value =>
+    ///         value =&gt;
     ///         {
     ///             if (value != null)
     ///                 return Enumerable.Empty&lt;Requirement&gt;();
@@ -53,7 +53,7 @@ namespace Oval
     ///             return new[] { new Requirement("Cannot be null") };
     ///         })
     ///     .CheckedAndFollowedBy(
-    ///         value =>
+    ///         value =&gt;
     ///         {
     ///             if (value.Length &lt; 255)
     ///                 return Enumerable.Empty&lt;Requirement&gt;();
@@ -61,9 +61,9 @@ namespace Oval
     ///             return new[] { new Requirement("Cannot exceed 255 characters") };
     ///         })
     ///     .AndEndedWith(
-    ///         value =>
+    ///         value =&gt;
     ///         {
-    ///             if (value.StartsWith("Testing"))
+    ///             if (value.StartsWith("Test"))
     ///                 return Enumerable.Empty&lt;Requirement&gt;();
     /// 
     ///             return new[] { new Requirement("Must start with \"Test\"") };
